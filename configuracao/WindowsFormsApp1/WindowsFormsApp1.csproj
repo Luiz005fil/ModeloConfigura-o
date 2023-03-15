@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E0215628-E0FB-4529-89D7-21B857F8F294}</ProjectGuid>
+    <ProjectGuid>{DB996F6F-FE09-4617-A1EF-07ECD8BE7033}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>WindowsFormsApp1</RootNamespace>
     <AssemblyName>WindowsFormsApp1</AssemblyName>
@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,12 +78,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{0503fc85-9e15-4f94-88b7-6e5f110a4c5b}</Project>
+      <Project>{b6f3fb88-ac7a-44a4-8aa1-d1eb4a2a9f81}</Project>
       <Name>BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Models\Models.csproj">
-      <Project>{422fb9d1-8c63-4615-89fd-4c8744db8b16}</Project>
-      <Name>Models</Name>
+    <ProjectReference Include="..\MODELS\MODELS.csproj">
+      <Project>{d37d614c-806c-42df-af3e-652c04f5f4f9}</Project>
+      <Name>MODELS</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

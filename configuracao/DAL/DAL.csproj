@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8CE23AC9-B021-408A-B33C-90D669E5A2C8}</ProjectGuid>
+    <ProjectGuid>{A8AE1AE5-C47D-4F53-A225-8A925B200C19}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DAL</RootNamespace>
@@ -41,13 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Conexao.cs" />
+    <Compile Include="GrupoUsuario.cs" />
+    <Compile Include="Permissao.cs" />
+    <Compile Include="UsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Models\Models.csproj">
-      <Project>{422fb9d1-8c63-4615-89fd-4c8744db8b16}</Project>
-      <Name>Models</Name>
+    <ProjectReference Include="..\MODELS\MODELS.csproj">
+      <Project>{d37d614c-806c-42df-af3e-652c04f5f4f9}</Project>
+      <Name>MODELS</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

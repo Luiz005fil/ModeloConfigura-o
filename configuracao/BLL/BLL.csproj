@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0503FC85-9E15-4F94-88B7-6E5F110A4C5B}</ProjectGuid>
+    <ProjectGuid>{B6F3FB88-AC7A-44A4-8AA1-D1EB4A2A9F81}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BLL</RootNamespace>
@@ -46,12 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{8ce23ac9-b021-408a-b33c-90d669e5a2c8}</Project>
+      <Project>{a8ae1ae5-c47d-4f53-a225-8a925b200c19}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Models\Models.csproj">
-      <Project>{422fb9d1-8c63-4615-89fd-4c8744db8b16}</Project>
-      <Name>Models</Name>
+    <ProjectReference Include="..\MODELS\MODELS.csproj">
+      <Project>{d37d614c-806c-42df-af3e-652c04f5f4f9}</Project>
+      <Name>MODELS</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
