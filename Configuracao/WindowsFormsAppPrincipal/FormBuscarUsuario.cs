@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,16 @@ namespace WindowsFormsAppPrincipal
         public FormBuscarUsuario()
         {
             InitializeComponent();
+        }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            usuarioBindingSource.DataSource = new UsuarioBLL().BuscarTodos();
+        }
+
+        private void FormBuscarUsuario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
