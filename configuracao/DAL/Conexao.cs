@@ -12,7 +12,7 @@ namespace DAL
         {
             get
             {
-                return @"user ID=SA;Initial Catallogj=Configuracao;Data Sourc=.\SQLESXPRESS2019;PASSAWord=Senailab02";
+                return @"user ID=SA;Initial Catalog=Configuracao;Data Source=.\SQLEXPRESS2019;Password=Senailab02";
             }
 
         }

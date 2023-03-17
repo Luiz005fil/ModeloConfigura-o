@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using BLL;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,7 +24,7 @@ namespace WindowsFormsAppPrincipal
             usuario.Ativo = true;
             usuario.Cpf = "123.456.789-58";
             usuario.Senha = "12345678";
-            usuario.Email = "contato@sorriso_oliveora.com";
+            usuario.Email = "contato@luizfilipi.com";
 
             new UsuarioBLL().Inserir(usuario);
         }

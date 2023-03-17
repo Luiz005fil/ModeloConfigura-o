@@ -18,7 +18,7 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"INSERT INTO Usuario(Nome, NomeUsuario, Email,CPF,Senha,Ativo)
-                                  VALEUS(@Nome,@NomeUsuario,@Email,@CPF,@Senha,@Ativo )";
+                                  VALUES(@Nome,@NomeUsuario,@Email,@CPF,@Senha,@Ativo )";
                 cmd.Parameters.AddWithValue("@Nome", _usuario.Nome);
                 cmd.Parameters.AddWithValue("@NomeUsuario", _usuario.NomeUsuario);
                 cmd.Parameters.AddWithValue("@Email", _usuario.Email);
