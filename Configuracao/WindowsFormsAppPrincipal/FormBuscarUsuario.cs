@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +26,26 @@ namespace WindowsFormsAppPrincipal
 
         private void FormBuscarUsuario_Load(object sender, EventArgs e)
         {
+            usuarioBindingSource.DataSource = new UsuarioBLL().BuscarTodos();
+        }
 
+        private void buttonExcluir_Click(object sender, EventArgs e)
+        {
+            if(usuarioBindingSource.Count <= 0)
+            {
+                MessageBox.Show("Não existe registro para ser excluído ☺☻");
+                return;
+            }
+
+            if (MessageBox.Show("Deseja realmente excluir este registro?",
+                "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+
+            int id = ((Usuario)usuarioBindingSource.Current).Id;
+            new UsuarioBLL().Excluir(id);
+            usuarioBindingSource.RemoveCurrent();
+
+            MessageBox.Show("Registro excluido com sucesso!");
         }
     }
 }
