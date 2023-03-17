@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MODELS
+namespace Models
 {
     public class GrupoUsuario
     {
-        public int Id { get; set; }
+        public int IdGrupo{ get; set; }
         public string NomeGrupo { get; set; }
-        public List<Permissao> Permissoes { get; set; }
+        public List<Permissao> Permitir { get; set; }
     }
 }
