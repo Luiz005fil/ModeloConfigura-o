@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,28 @@ namespace WindowsFormsAppPrincipal
         public FormBuscarGrupoUsuario()
         {
             InitializeComponent();
+        }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            grupoUsuarioBindingSource.DataSource = new UsuarioBLL().BuscarTodos();
+        }
+
+        private void FormBuscarGrupoUsuario_Load(object sender, EventArgs e)
+        {
+            grupoUsuarioBindingSource.DataSource = new UsuarioBLL().BuscarTodos();
+        }
+
+        private void buttonExcluir_Click(object sender, EventArgs e)
+        {
+            if(grupoUsuarioBindingSource.Count <= 0)
+            {
+                MessageBox.Show("Não existe registro para ser excluído ☺☻");
+                return;
+            }
+            if (MessageBox.Show("Deseja realmente excluir este registro?",
+                "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                 return;
         }
     }
 }

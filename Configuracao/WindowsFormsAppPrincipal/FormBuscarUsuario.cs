@@ -67,5 +67,7 @@ namespace WindowsFormsAppPrincipal
             }
             buttonBuscar_Click(null, null);
         }
+
+
     }
 }
