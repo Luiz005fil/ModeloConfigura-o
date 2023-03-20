@@ -66,10 +66,6 @@ namespace BLL
                 
             UsuarioDAL usuarioDAL = new UsuarioDAL();
             usuarioDAL.inserir(_usuario);
-
-                
-
-
          }
 
 

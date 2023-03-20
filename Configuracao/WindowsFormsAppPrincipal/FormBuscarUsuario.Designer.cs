@@ -333,6 +333,7 @@
             this.buttonAdicionarUsuario.TabIndex = 4;
             this.buttonAdicionarUsuario.Text = "Adicionar";
             this.buttonAdicionarUsuario.UseVisualStyleBackColor = true;
+            this.buttonAdicionarUsuario.Click += new System.EventHandler(this.buttonAdicionarUsuario_Click);
             // 
             // buttonAlterar
             // 
