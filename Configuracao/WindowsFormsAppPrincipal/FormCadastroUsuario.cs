@@ -14,23 +14,32 @@ namespace WindowsFormsAppPrincipal
 {
     public partial class FormCadastroUsuario : Form
     {
-        public FormCadastroUsuario()
+        public int Id;
+        public FormCadastroUsuario(int _id = 0)
         {
             InitializeComponent();
+            Id = _id;
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             UsuarioBLL usuarioBLL = new UsuarioBLL();
             usuarioBindingSource.EndEdit();
+            if (Id == 0)
             usuarioBLL.Inserir((Usuario)usuarioBindingSource.Current);
+            else
+            usuarioBLL.Inserir((Usuario)usuarioBindingSource.Current);
+
             MessageBox.Show("Registro salvo com sucesso!☺");
             Close();
         }
 
         private void FormCadastroUsuario_Load(object sender, EventArgs e)
         {
+            if (Id == 0)
             usuarioBindingSource.AddNew();
+            else
+            usuarioBindingSource.DataSource = new UsuarioBLL().BuscarPorId(Id);
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)

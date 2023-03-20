@@ -109,7 +109,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, NomeUsuario, Email,CPF,Ativo,Senha FROM Usuario";
+                cmd.CommandText = "SELECT Id, Nome, NomeUsuario, Email,CPF,Ativo,Senha FROM Usuario ";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
@@ -286,7 +286,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id,Nome,NomeUsuario,Email,CPF,Ativo";
+                cmd.CommandText = "SELECT Id,Nome,NomeUsuario,Email,CPF,Ativo,Senha FROM Usuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("Id", _id);
@@ -314,7 +314,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("O correu um erro na tentativa de inserir um usuário. por favor verifique sua conexão", ex);
+                throw new Exception("O correu um erro na tentativa de buscar por id um usuário. por favor verifique sua conexão", ex);
             }
             finally
             {
