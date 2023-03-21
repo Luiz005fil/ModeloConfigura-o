@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,6 +39,25 @@ namespace WindowsFormsAppPrincipal
             if (MessageBox.Show("Deseja realmente excluir este registro?",
                 "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                  return;
+            int id = ((GrupoUsuario)grupoUsuarioBindingSource.Current).IdGrupo;
+            new UsuarioBLL().Excluir(id);
+            grupoUsuarioBindingSource.RemoveCurrent();
+
+            MessageBox.Show("Registro excluido com sucesso!");
+        }
+
+        private void buttonAdicionar_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarGrupoUsuario frm = new FormBuscarGrupoUsuario())
+            {
+                frm.ShowDialog();
+            }
+            buttonBuscar_Click(null, null);
+        }
+
+        private void buttonAlterar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
