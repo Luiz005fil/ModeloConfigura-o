@@ -33,7 +33,7 @@ namespace WindowsFormsAppPrincipal
         {
             if(grupoUsuarioBindingSource.Count <= 0)
             {
-                MessageBox.Show("Não existe registro para ser excluído ☺☻");
+                MessageBox.Show("Não existe registro para ser excluído!");
                 return;
             }
             if (MessageBox.Show("Deseja realmente excluir este registro?",
