@@ -36,7 +36,7 @@ namespace WindowsFormsAppPrincipal
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-
+            Constante.IdUsuarioLogado = 13;
         }
 
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)

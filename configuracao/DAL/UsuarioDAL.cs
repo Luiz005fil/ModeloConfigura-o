@@ -50,7 +50,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = "update Usuario set Nome = @nome,NomeUsuario = @NomeUsario,Email = @Email,Cpf =@Cpf,Senha = @Senha,Ativo = @Ativa WHERE id = @ID";
                 cmd.CommandType = System.Data.CommandType.Text;
-                
+
                 cmd.Parameters.AddWithValue("@Id", _usuario.Id);
                 cmd.Parameters.AddWithValue("@Nome", _usuario.Nome);
                 cmd.Parameters.AddWithValue("@NomeUsuario", _usuario.NomeUsuario);
@@ -74,7 +74,7 @@ namespace DAL
             }
         }
         public void Excluir(int _id)
-        
+
         {
             SqlConnection cn = new SqlConnection(Conexao.stringDeConexao);
             try
@@ -242,7 +242,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id,Nome,NomeUsuario,Email,CPF,Ativo FROM Usuario WHERE NomeUsuario LIKE = @nomeusuario" ;
+                cmd.CommandText = "SELECT Id,Nome,NomeUsuario,Email,CPF,Ativo FROM Usuario WHERE NomeUsuario LIKE = @nomeusuario";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@nomeusuario", "%" + _nomeUsuario + "%");
                 cn.Open();
@@ -315,6 +315,43 @@ namespace DAL
             catch (Exception ex)
             {
                 throw new Exception("O correu um erro na tentativa de buscar por id um usuário. por favor verifique sua conexão", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+        }
+
+        public bool ValidarPermissao(int _idUsuario, int _idPermissao)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.stringDeConexao);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT 1 FROM PermissaoGrupoUsuario INNER JOIN UsuarioGrupoUsuario ON PermissaoGrupoUsuario.IdGrupoUsuario = UsuarioGrupoUsuario.IdGrupoUsuario\r\nWHERE UsuarioGrupoUsuario.IdUsuario = @IdUsuario and PermissaoGrupoUsuario.IdPermissao = @IdPermissao";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
+                cmd.Parameters.AddWithValue("@IdPermissao", _idPermissao);
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+
+            catch (Exception ex)
+            {
+                throw new Exception("Você não tem permissão", ex);
             }
             finally
             {
