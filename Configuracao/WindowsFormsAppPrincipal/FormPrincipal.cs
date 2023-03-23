@@ -18,15 +18,7 @@ namespace WindowsFormsAppPrincipal
         public FormPrincipal()
         {
             InitializeComponent();
-            Usuario usuario = new Usuario();
-            usuario.Nome = "Luiz Filipi";
-            usuario.NomeUsuario = "luiz005";
-            usuario.Ativo = true;
-            usuario.Cpf = "123.456.789-58";
-            usuario.Senha = "12345678";
-            usuario.Email = "contato@luizfilipi.com";
 
-            new UsuarioBLL().Inserir(usuario);
         }
 
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
@@ -36,7 +28,7 @@ namespace WindowsFormsAppPrincipal
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            Constante.IdUsuarioLogado = 13;
+            Constante.IdUsuarioLogado = 2;
         }
 
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)

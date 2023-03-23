@@ -38,19 +38,22 @@ namespace BLL
           }
          public List<Usuario> BuscarPorId(int _id) 
          {
+            ValidarPermissao(1);
             return new UsuarioDAL().BuscarPorId( _id);
          }
          public List<Usuario> BuscarPorCPF(string _cpf) 
          {
+            ValidarPermissao(1);
             return new UsuarioDAL().BuscarPorCPF(_cpf);
          }
          public List<Usuario> BuscarPorNome(string _nome) 
          {
+            ValidarPermissao(1);
             return new UsuarioDAL().BuscarPorNome(_nome);
          }
          public List<Usuario> BuscarPorNomeUsuario(string _nomeUsuario)
-        
          {
+            ValidarPermissao(1);
             return new UsuarioDAL().BuscarPorNomeUsuario(_nomeUsuario);
          }
          private void ValidarDados(Usuario _usuario) 

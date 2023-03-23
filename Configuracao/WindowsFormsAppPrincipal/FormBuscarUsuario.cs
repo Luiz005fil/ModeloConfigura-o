@@ -34,7 +34,16 @@ namespace WindowsFormsAppPrincipal
 
         private void FormBuscarUsuario_Load(object sender, EventArgs e)
         {
-            usuarioBindingSource.DataSource = new UsuarioBLL().BuscarTodos();
+            try
+            {
+                usuarioBindingSource.DataSource = new UsuarioBLL().BuscarTodos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Close();
+            }
+            
         }
 
         private void buttonExcluir_Click(object sender, EventArgs e)
