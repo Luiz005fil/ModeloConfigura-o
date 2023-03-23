@@ -26,9 +26,9 @@ namespace WindowsFormsAppPrincipal
             UsuarioBLL usuarioBLL = new UsuarioBLL();
             usuarioBindingSource.EndEdit();
             if (Id == 0)
-            usuarioBLL.Inserir((Usuario)usuarioBindingSource.Current);
+            usuarioBLL.Inserir((Usuario)usuarioBindingSource.Current,textBoxConfirmarSenha);
             else
-            usuarioBLL.Inserir((Usuario)usuarioBindingSource.Current);
+            usuarioBLL.Inserir((Usuario)usuarioBindingSource.Current,textBoxConfirmarSenha);
 
             MessageBox.Show("Registro salvo com sucesso!☺");
             Close();

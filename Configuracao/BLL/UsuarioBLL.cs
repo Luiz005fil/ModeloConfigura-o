@@ -10,14 +10,14 @@ namespace BLL
 {
     public class UsuarioBLL
     {
-        public void Inserir (Usuario _usuario)
+        public void Inserir (Usuario _usuario, string _confirmaçãoDeSenha)
         {
             ValidarPermissao(2);          
             
             UsuarioDAL usuarioDAL = new UsuarioDAL();
             usuarioDAL.inserir( _usuario);
         }
-         public void Alterar(Usuario _usuario)
+         public void Alterar(Usuario _usuario, string _confirmaçãoDeSenha)
 
          {
             ValidarPermissao(3);
