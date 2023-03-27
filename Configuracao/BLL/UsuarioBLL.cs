@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
@@ -75,6 +76,21 @@ namespace BLL
          {
             if (!new UsuarioDAL().ValidarPermissao(Constante.IdUsuarioLogado, _idPermissao))
                 throw new Exception("Você não tem permissao de realizar essa operação. PROCURE o administrador do sistema.");
-         }   
+         }  
+         private void ValidarDados(Usuario _usuario, string _confirmacao)
+        {
+            if(_usuario.Senha != _confirmacao)
+            {
+                throw new Exception("As senhas devem ser iguais.");
+            }
+            if(_usuario.Senha.Length <= 3)
+            {
+                throw new Exception("A senha deve ter de 3 caracteres.");
+            }
+            if(_usuario.Nome.Length <= 2)
+            {
+                throw new Exception("O nome deve ter mais de 2 caracteres.");
+            }
+        }
     }
 }
