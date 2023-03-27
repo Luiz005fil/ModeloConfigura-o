@@ -13,7 +13,7 @@ namespace DAL
     {
         public void inserir(Permissao _permissao)
         {
-            SqlConnection cn = new SqlConnection(Conexao.stringDeConexao);
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
 
             try
             {
@@ -30,7 +30,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("O correu um erro na tentativa de inserir uma descrissao. por favor verifique sua conexão", ex);
+                throw new Exception("Ocorreu erro ao tentar inserir uma permissão no banco de dados. Por favor verifique sua conexão", ex);
             }
             finally
             {
@@ -40,12 +40,12 @@ namespace DAL
         }
         public void Alterar(Permissao _permissao)
         {
-            SqlConnection cn = new SqlConnection(Conexao.stringDeConexao);
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
 
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "update Usuario set Descricao = @Descricao";
+                cmd.CommandText = "update Usuario set Descricao = @Descricao WHERE Id = @id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _permissao.IdPermissao);
@@ -59,7 +59,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("O correu um erro na tentativa de inserir um usuário. por favor verifique sua conexão", ex);
+                throw new Exception("Ocorreu erro ao tentar alterar uma permissão no banco de dados. Por favor verifique sua conexão", ex);
             }
             finally
             {
@@ -68,11 +68,11 @@ namespace DAL
         }
         public void Excluir(int _id)
         {
-            SqlConnection cn = new SqlConnection(Conexao.stringDeConexao);
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "DELETE FROM Permissao WHERE ID = @Id";
+                cmd.CommandText = "DELETE FROM Permissao WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -84,7 +84,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("O correu um erro na tentativa de exluir um usuário.por favor verifique sua conexão", ex);
+                throw new Exception("Ocorreu erro ao tentar excluir uma permissão no banco de dados. Por favor verifique sua conexão", ex);
             }
             finally
             {
@@ -94,7 +94,7 @@ namespace DAL
         }
         public List<Permissao> BuscarPorTodos()
         {
-            SqlConnection cn = new SqlConnection(Conexao.stringDeConexao);
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             List<Permissao> permissoes = new List<Permissao >();
             Permissao permissao;
             try
@@ -122,7 +122,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("O correu um erro na tentetiva jde buscar dos dados. Por favor verifique sua conexao", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar todas as permissoes no banco de dados. Por favor verifique sua conexao", ex);
             }
             finally
             {
@@ -133,7 +133,7 @@ namespace DAL
         public List<Permissao> BuscarPorDescricao(string _descricao)
         {
 
-            SqlConnection cn = new SqlConnection(Conexao.stringDeConexao);
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             List<Permissao> permissoes = new List<Permissao>();
             Permissao permissao = new Permissao ();
 
@@ -142,15 +142,16 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id,descrissao";
+                cmd.CommandText = "SELECT Id, NomeGrupo FROM GrupoUsuario WHERE Descricao LIKE @Descricao";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Descricao", "%" + _descricao + "%");
                 cn.Open();
+               
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     while (rd.Read())
                     {
-                        
+                        permissao = new Permissao();
                         permissao.IdPermissao = Convert.ToInt32(rd["Id"]);
                         permissao.descricao = rd["descricao "].ToString();
                         permissoes.Add(permissao);
@@ -162,7 +163,7 @@ namespace DAL
 
             catch (Exception ex)
             {
-                throw new Exception("O correu um erro na tentativa de inserir um usuário. por favor verifique sua conexão", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar todas as permissoes no banco de dados.Por favor verifique sua conexão", ex);
             }
             finally
             {
@@ -172,7 +173,7 @@ namespace DAL
 
         public List<Permissao> BuscarPorId(int _id)
         {
-            SqlConnection cn = new SqlConnection(Conexao.stringDeConexao);
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             List<Permissao> permissoes = new List<Permissao>();
             Permissao permissao;
             try
@@ -180,13 +181,12 @@ namespace DAL
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id,descrissao";
+                cmd.CommandText = "SELECT Id, NomeGrupo FROM GrupoUsuario WHERE Id LIKE @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("Id", _id);
                 cn.Open();
+                
                 using (SqlDataReader rd = cmd.ExecuteReader())
-
-
                 {
                     while (rd.Read())
                     {
@@ -202,7 +202,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("O correu um erro na tentativa de inserir um usuário. por favor verifique sua conexão", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar permissoes por Id no banco de dados. Por favor verifique sua conexão", ex);
             }
             finally
             {

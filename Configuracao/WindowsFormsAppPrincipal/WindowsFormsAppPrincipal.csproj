@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{38EE3F6D-08A1-419D-94BF-677C479BD727}</ProjectGuid>
+    <ProjectGuid>{112854CF-2B83-48E5-B34F-FE56953FA089}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>WindowsFormsAppPrincipal</RootNamespace>
     <AssemblyName>WindowsFormsAppPrincipal</AssemblyName>
@@ -46,17 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormBuscarGrupoUsuario.cs">
+    <Compile Include="FormCadastrodeUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBuscarGrupoUsuario.Designer.cs">
-      <DependentUpon>FormBuscarGrupoUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormBuscarUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormBuscarUsuario.Designer.cs">
-      <DependentUpon>FormBuscarUsuario.cs</DependentUpon>
+    <Compile Include="FormCadastrodeUsuario.Designer.cs">
+      <DependentUpon>FormCadastrodeUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCadastroGrupoUsuario.cs">
       <SubType>Form</SubType>
@@ -64,31 +58,34 @@
     <Compile Include="FormCadastroGrupoUsuario.Designer.cs">
       <DependentUpon>FormCadastroGrupoUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastroUsuario.cs">
+    <Compile Include="FormConsultaGrupoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroUsuario.Designer.cs">
-      <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
+    <Compile Include="FormConsultaGrupoUsuario.Designer.cs">
+      <DependentUpon>FormConsultaGrupoUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPrincipal.cs">
+    <Compile Include="FormTelaprincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPrincipal.Designer.cs">
-      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    <Compile Include="FormTelaprincipal.Designer.cs">
+      <DependentUpon>FormTelaprincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarUsuario.Designer.cs">
+      <DependentUpon>FormBuscarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscarGrupoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarGrupoUsuario.Designer.cs">
+      <DependentUpon>FormBuscarGrupoUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormBuscarGrupoUsuario.resx">
-      <DependentUpon>FormBuscarGrupoUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormBuscarUsuario.resx">
-      <DependentUpon>FormBuscarUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastroUsuario.resx">
-      <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormPrincipal.resx">
-      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="FormConsultaGrupoUsuario.resx">
+      <DependentUpon>FormConsultaGrupoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -99,9 +96,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Properties\DataSources\Models.GrupoUsuario.datasource" />
-    <None Include="Properties\DataSources\Models.Permissao.datasource" />
-    <None Include="Properties\DataSources\Models.Usuario.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -117,11 +111,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{d0370134-5a50-4243-a341-297702996b4f}</Project>
+      <Project>{6d2e38ed-63a7-4b5c-9bf1-95c2dbf80b8c}</Project>
       <Name>BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
-      <Project>{4c26bc63-7cb7-4f3a-aebf-4055c074ccad}</Project>
+      <Project>{3a500559-ec5a-459f-8e11-bdfd5f267261}</Project>
       <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>

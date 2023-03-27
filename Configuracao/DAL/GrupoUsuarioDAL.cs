@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Markup;
 
-namespace DAL
-{
+ namespace DAL
+ {
     public class GrupoUsuarioDAL
     {
         public void inserir(GrupoUsuario _grupousuario)
         {
-            SqlConnection cn = new SqlConnection(Conexao.stringDeConexao);
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
 
             try
             {
@@ -32,7 +32,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("O correu um erro na tentativa de inserir uma descrissao. por favor verifique sua conexão", ex);
+                throw new Exception("Ocorreu erro ao tentar inserir um grupo de usuário no banco de dados. Por favor verifique sua conexão", ex);
             }
             finally
             {
@@ -45,7 +45,7 @@ namespace DAL
 
         public void Alterar(GrupoUsuario _grupousuario)
         {
-            SqlConnection cn = new SqlConnection(Conexao.stringDeConexao);
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
 
             try
             {
@@ -54,7 +54,7 @@ namespace DAL
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _grupousuario.IdGrupo);
-                cmd.Parameters.AddWithValue("@nomegrupo", _grupousuario.NomeGrupo);
+                cmd.Parameters.AddWithValue("@NomeGrupo", _grupousuario.NomeGrupo);
 
                 cmd.Connection = cn;
                 cn.Open();
@@ -64,7 +64,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("O correu um erro na tentativa de inserir um usuário. por favor verifique sua conexão", ex);
+                throw new Exception("O correu um erro ao tentarde alterar um grupo de usuário no banco de dados.", ex);        
             }
             finally
             {
@@ -73,12 +73,12 @@ namespace DAL
         }
         public void Excluir(int _id)
         {
-            SqlConnection cn = new SqlConnection(Conexao.stringDeConexao);
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
 
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "DELETE FROM GrupoUsuario WHERE ID = @Id";
+                cmd.CommandText = "DELETE FROM GrupoUsuario WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -100,14 +100,14 @@ namespace DAL
 
         public List<GrupoUsuario> BuscarPorTodos()
         {
-            SqlConnection cn = new SqlConnection(Conexao.stringDeConexao);
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             List<GrupoUsuario> grupousuarios = new List<GrupoUsuario>();
             GrupoUsuario grupousuario;
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, nomegrupo";
+                cmd.CommandText = "SELECT Id, NomeGrupo FROM GrupoUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
@@ -117,10 +117,7 @@ namespace DAL
                     {
                         grupousuario = new GrupoUsuario();
                         grupousuario.IdGrupo = Convert.ToInt32(rd["Id"]);
-                        grupousuario.NomeGrupo = rd["nomegrupo "].ToString();
-
-
-
+                        grupousuario.NomeGrupo = rd["NomeGrupo "].ToString();
                         grupousuarios.Add(grupousuario);
                     }
                 }
@@ -128,7 +125,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("O correu um erro na tentetiva de buscar dos dados. Por favor verifique sua conexao", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar todos os grupos de usuários no banco de dados. Por favor verifique sua conexao", ex);
             }
             finally
             {
@@ -138,7 +135,7 @@ namespace DAL
         public List<GrupoUsuario> BuscarPorNome(string _nomegrupo)
         {
 
-            SqlConnection cn = new SqlConnection(Conexao.stringDeConexao);
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             List<GrupoUsuario> grupousuarios = new List<GrupoUsuario>();
             GrupoUsuario grupousuario = new GrupoUsuario();
 
@@ -147,16 +144,19 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id,Nomegrupo";
+                cmd.CommandText = "SELECT Id,NomeGrupo FROM GrupoUsuario WHERE Nomegrupo LIKE @Nomegrupo";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nomegrupo", "%" + _nomegrupo + "%");
                 cn.Open();
+                
                 using (SqlDataReader rd = cmd.ExecuteReader())
+                
                 {
                     while (rd.Read())
                     {
+                        grupousuario = new GrupoUsuario();
                         grupousuario.IdGrupo = Convert.ToInt32(rd["Id"]);
-                        grupousuario.NomeGrupo = rd["nomegrupo "].ToString();
+                        grupousuario.NomeGrupo = rd["NomeGrupo"].ToString();
                         grupousuarios.Add(grupousuario);
                     }
                 }
@@ -166,7 +166,7 @@ namespace DAL
 
             catch (Exception ex)
             {
-                throw new Exception("O correu um erro na tentativa de inserir um usuário. por favor verifique sua conexão", ex);
+                throw new Exception("O correu um erro ao tentar buscar grupo de usuário por nome no grupo no banco de dados . Por favor verifique sua conexão", ex);
             }
             finally
             {
@@ -177,7 +177,7 @@ namespace DAL
         public List<GrupoUsuario> BuscarPorId(int _id)
 
         {
-            SqlConnection cn = new SqlConnection(Conexao.stringDeConexao);
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             List<GrupoUsuario> grupousuarios = new List<GrupoUsuario>();
             GrupoUsuario grupousuario = new GrupoUsuario();
             try
@@ -185,9 +185,9 @@ namespace DAL
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id,nomegrupo";
+                cmd.CommandText = "SELECT Id,NomeGrupo FROM GrupoUsuario WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("Id", _id);
+                cmd.Parameters.AddWithValue("@Id", _id);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
 
@@ -197,7 +197,7 @@ namespace DAL
                     {
 
                         grupousuario.IdGrupo = Convert.ToInt32(rd["Id"]);
-                        grupousuario.NomeGrupo = rd["nomegrupo "].ToString();
+                        grupousuario.NomeGrupo = rd["NomeGrupo "].ToString();
                         grupousuarios.Add(grupousuario);
                     }
                 }
@@ -207,7 +207,45 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("O correu um erro na tentativa de inserir um usuário. por favor verifique sua conexão", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar grupo usuario por Id no banco de dados. verifique sua conexão", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public List<GrupoUsuario> BuscarPorIdUsuario(int _idUsuario)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<GrupoUsuario> grupousuarios = new List<GrupoUsuario>();
+            GrupoUsuario grupousuario;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT GrupoUsuario.Id, GrupoUsuario.NomeGrupo FROM GrupoUsuario
+                    INNER JOIN UsuarioGrupoUsuario ON GrupoUsuario.Id = UsuarioGrupoUsuario.IdGrupoUsuario
+                    WHERE UsuarioGrupoUsuario.IdUsuario = @Idusuario";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Idusuario",_idUsuario);
+
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        grupousuario = new GrupoUsuario();
+                        grupousuario.IdGrupo = Convert.ToInt32(rd["Id"]);
+                        grupousuario.NomeGrupo = rd["NomeGrupo"].ToString();
+                        grupousuarios.Add(grupousuario);
+                        
+                    }
+                }
+                return grupousuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar grupos de usuário Id do usuário do banco de dado. ");
             }
             finally
             {

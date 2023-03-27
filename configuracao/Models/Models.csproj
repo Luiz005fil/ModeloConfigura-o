@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4C26BC63-7CB7-4F3A-AEBF-4055C074CCAD}</ProjectGuid>
+    <ProjectGuid>{3A500559-EC5A-459F-8E11-BDFD5F267261}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Models</RootNamespace>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constante.cs" />
+    <Compile Include="Contantes.cs" />
     <Compile Include="GrupoUsuario.cs" />
     <Compile Include="Permissao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
