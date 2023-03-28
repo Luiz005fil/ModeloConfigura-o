@@ -45,7 +45,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 115);
+            this.label1.Location = new System.Drawing.Point(32, 108);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(230, 20);
             this.label1.TabIndex = 7;
@@ -67,7 +67,7 @@
             // buttonSelecionar
             // 
             this.buttonSelecionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSelecionar.Location = new System.Drawing.Point(367, 128);
+            this.buttonSelecionar.Location = new System.Drawing.Point(367, 126);
             this.buttonSelecionar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSelecionar.Name = "buttonSelecionar";
             this.buttonSelecionar.Size = new System.Drawing.Size(110, 28);
@@ -79,7 +79,7 @@
             // buttonBuscar
             // 
             this.buttonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscar.Location = new System.Drawing.Point(284, 127);
+            this.buttonBuscar.Location = new System.Drawing.Point(284, 125);
             this.buttonBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(83, 28);
@@ -91,7 +91,7 @@
             // buttonCancelar
             // 
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelar.Location = new System.Drawing.Point(485, 128);
+            this.buttonCancelar.Location = new System.Drawing.Point(485, 126);
             this.buttonCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(105, 27);
@@ -108,7 +108,7 @@
             this.gPusuariosDataGridView.AutoGenerateColumns = false;
             this.gPusuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gPusuariosDataGridView.DataSource = this.gPusuariosBindingSource;
-            this.gPusuariosDataGridView.Location = new System.Drawing.Point(32, 155);
+            this.gPusuariosDataGridView.Location = new System.Drawing.Point(32, 159);
             this.gPusuariosDataGridView.Name = "gPusuariosDataGridView";
             this.gPusuariosDataGridView.ReadOnly = true;
             this.gPusuariosDataGridView.RowHeadersWidth = 51;
@@ -118,7 +118,7 @@
             // 
             // textBoxBuscar
             // 
-            this.textBoxBuscar.Location = new System.Drawing.Point(32, 134);
+            this.textBoxBuscar.Location = new System.Drawing.Point(32, 127);
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(245, 26);
             this.textBoxBuscar.TabIndex = 6;

@@ -62,6 +62,8 @@ namespace WindowsFormsAppPrincipal
             buttonBuscar_Click(null, null);
         }
 
+       
+
         //private void InitializeComponent()
         //{
         //    this.SuspendLayout();

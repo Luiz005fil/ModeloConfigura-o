@@ -189,7 +189,7 @@
             // 
             // buttonExcluirPermissao
             // 
-            this.buttonExcluirPermissao.Location = new System.Drawing.Point(775, 89);
+            this.buttonExcluirPermissao.Location = new System.Drawing.Point(792, 90);
             this.buttonExcluirPermissao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExcluirPermissao.Name = "buttonExcluirPermissao";
             this.buttonExcluirPermissao.Size = new System.Drawing.Size(129, 34);

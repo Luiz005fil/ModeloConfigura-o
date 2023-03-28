@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTelaprincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,20 +62,20 @@
             // usuárioToolStripMenuItem
             // 
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
             this.usuárioToolStripMenuItem.Text = "Usuário";
             this.usuárioToolStripMenuItem.Click += new System.EventHandler(this.usuárioToolStripMenuItem_Click);
             // 
             // permissãoToolStripMenuItem
             // 
             this.permissãoToolStripMenuItem.Name = "permissãoToolStripMenuItem";
-            this.permissãoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.permissãoToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
             this.permissãoToolStripMenuItem.Text = "Permissão";
             // 
             // grupoDeUsuárioToolStripMenuItem
             // 
             this.grupoDeUsuárioToolStripMenuItem.Name = "grupoDeUsuárioToolStripMenuItem";
-            this.grupoDeUsuárioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.grupoDeUsuárioToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
             this.grupoDeUsuárioToolStripMenuItem.Text = "Grupo de Usuário";
             this.grupoDeUsuárioToolStripMenuItem.Click += new System.EventHandler(this.grupoDeUsuárioToolStripMenuItem_Click);
             // 
@@ -89,12 +88,11 @@
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.DarkSeaGreen;
-            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormTelaprincipal";
             this.Text = "Tela Principal";
-   
+            this.Load += new System.EventHandler(this.FormTelaprincipal_Load_1);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

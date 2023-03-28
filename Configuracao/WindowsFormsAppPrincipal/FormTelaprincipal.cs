@@ -18,23 +18,6 @@ namespace WindowsFormsAppPrincipal
             InitializeComponent();
         }
 
-        /*private void FormTelaprincipal_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                using(FormLogin frm = new FormLogin())
-                {
-                    frm.ShowDialog();
-                    if (!frm.Logou)
-                        Application.Exit();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        */
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FormBuscarUsuario frm = new FormBuscarUsuario())
@@ -50,6 +33,22 @@ namespace WindowsFormsAppPrincipal
                 frm.ShowDialog();
             }
         }
-          
+
+        private void FormTelaprincipal_Load_1(object sender, EventArgs e)
+        {
+            try
+            {
+                using (FormLogin frm = new FormLogin())
+                {
+                    frm.ShowDialog();
+                    if (!frm.Logou)
+                        Application.Exit();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

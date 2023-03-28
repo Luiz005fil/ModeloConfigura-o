@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label nomeLabel;
-            System.Windows.Forms.Label emailLabel;
-            System.Windows.Forms.Label nomeUsuarioLabel;
-            System.Windows.Forms.Label cPFLabel;
-            System.Windows.Forms.Label senhaLabel;
-            System.Windows.Forms.Label ativoLabel;
-            System.Windows.Forms.Label label2;
+            this.nomeLabel = new System.Windows.Forms.Label();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.nomeUsuarioLabel = new System.Windows.Forms.Label();
+            this.cPFLabel = new System.Windows.Forms.Label();
+            this.senhaLabel = new System.Windows.Forms.Label();
+            this.ativoLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
@@ -47,78 +47,71 @@
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancelar = new System.Windows.Forms.Button();
-            nomeLabel = new System.Windows.Forms.Label();
-            emailLabel = new System.Windows.Forms.Label();
-            nomeUsuarioLabel = new System.Windows.Forms.Label();
-            cPFLabel = new System.Windows.Forms.Label();
-            senhaLabel = new System.Windows.Forms.Label();
-            ativoLabel = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nomeLabel
             // 
-            nomeLabel.AutoSize = true;
-            nomeLabel.Location = new System.Drawing.Point(27, 91);
-            nomeLabel.Name = "nomeLabel";
-            nomeLabel.Size = new System.Drawing.Size(44, 16);
-            nomeLabel.TabIndex = 1;
-            nomeLabel.Text = "Nome";
+            this.nomeLabel.AutoSize = true;
+            this.nomeLabel.Location = new System.Drawing.Point(25, 91);
+            this.nomeLabel.Name = "nomeLabel";
+            this.nomeLabel.Size = new System.Drawing.Size(44, 16);
+            this.nomeLabel.TabIndex = 1;
+            this.nomeLabel.Text = "Nome";
             // 
             // emailLabel
             // 
-            emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(495, 91);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(44, 16);
-            emailLabel.TabIndex = 3;
-            emailLabel.Text = "Email:";
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Location = new System.Drawing.Point(501, 91);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(44, 16);
+            this.emailLabel.TabIndex = 3;
+            this.emailLabel.Text = "Email:";
             // 
             // nomeUsuarioLabel
             // 
-            nomeUsuarioLabel.AutoSize = true;
-            nomeUsuarioLabel.Location = new System.Drawing.Point(31, 181);
-            nomeUsuarioLabel.Name = "nomeUsuarioLabel";
-            nomeUsuarioLabel.Size = new System.Drawing.Size(116, 16);
-            nomeUsuarioLabel.TabIndex = 5;
-            nomeUsuarioLabel.Text = "Nome  de Usuário";
+            this.nomeUsuarioLabel.AutoSize = true;
+            this.nomeUsuarioLabel.Location = new System.Drawing.Point(25, 181);
+            this.nomeUsuarioLabel.Name = "nomeUsuarioLabel";
+            this.nomeUsuarioLabel.Size = new System.Drawing.Size(116, 16);
+            this.nomeUsuarioLabel.TabIndex = 5;
+            this.nomeUsuarioLabel.Text = "Nome  de Usuário";
             // 
             // cPFLabel
             // 
-            cPFLabel.AutoSize = true;
-            cPFLabel.Location = new System.Drawing.Point(283, 91);
-            cPFLabel.Name = "cPFLabel";
-            cPFLabel.Size = new System.Drawing.Size(33, 16);
-            cPFLabel.TabIndex = 7;
-            cPFLabel.Text = "CPF";
+            this.cPFLabel.AutoSize = true;
+            this.cPFLabel.Location = new System.Drawing.Point(276, 91);
+            this.cPFLabel.Name = "cPFLabel";
+            this.cPFLabel.Size = new System.Drawing.Size(33, 16);
+            this.cPFLabel.TabIndex = 7;
+            this.cPFLabel.Text = "CPF";
             // 
             // senhaLabel
             // 
-            senhaLabel.AutoSize = true;
-            senhaLabel.Location = new System.Drawing.Point(304, 181);
-            senhaLabel.Name = "senhaLabel";
-            senhaLabel.Size = new System.Drawing.Size(49, 16);
-            senhaLabel.TabIndex = 9;
-            senhaLabel.Text = "Senha:";
+            this.senhaLabel.AutoSize = true;
+            this.senhaLabel.Location = new System.Drawing.Point(299, 181);
+            this.senhaLabel.Name = "senhaLabel";
+            this.senhaLabel.Size = new System.Drawing.Size(49, 16);
+            this.senhaLabel.TabIndex = 9;
+            this.senhaLabel.Text = "Senha:";
             // 
             // ativoLabel
             // 
-            ativoLabel.AutoSize = true;
-            ativoLabel.Location = new System.Drawing.Point(598, 190);
-            ativoLabel.Name = "ativoLabel";
-            ativoLabel.Size = new System.Drawing.Size(40, 16);
-            ativoLabel.TabIndex = 11;
-            ativoLabel.Text = "Ativo:";
+            this.ativoLabel.AutoSize = true;
+            this.ativoLabel.Location = new System.Drawing.Point(594, 203);
+            this.ativoLabel.Name = "ativoLabel";
+            this.ativoLabel.Size = new System.Drawing.Size(40, 16);
+            this.ativoLabel.TabIndex = 11;
+            this.ativoLabel.Text = "Ativo:";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(418, 181);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(102, 16);
-            label2.TabIndex = 17;
-            label2.Text = "Confirma Senha";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(414, 181);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 16);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Confirma Senha";
             // 
             // usuarioBindingSource
             // 
@@ -167,7 +160,7 @@
             // ativoCheckBox
             // 
             this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.usuarioBindingSource, "Ativo", true));
-            this.ativoCheckBox.Location = new System.Drawing.Point(573, 187);
+            this.ativoCheckBox.Location = new System.Drawing.Point(567, 200);
             this.ativoCheckBox.Name = "ativoCheckBox";
             this.ativoCheckBox.Size = new System.Drawing.Size(104, 24);
             this.ativoCheckBox.TabIndex = 12;
@@ -220,19 +213,19 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
-            this.Controls.Add(label2);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxConfirmacao);
-            this.Controls.Add(ativoLabel);
+            this.Controls.Add(this.ativoLabel);
             this.Controls.Add(this.ativoCheckBox);
-            this.Controls.Add(senhaLabel);
+            this.Controls.Add(this.senhaLabel);
             this.Controls.Add(this.senhaTextBox);
-            this.Controls.Add(cPFLabel);
+            this.Controls.Add(this.cPFLabel);
             this.Controls.Add(this.cPFTextBox);
-            this.Controls.Add(nomeUsuarioLabel);
+            this.Controls.Add(this.nomeUsuarioLabel);
             this.Controls.Add(this.nomeUsuarioTextBox);
-            this.Controls.Add(emailLabel);
+            this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.emailTextBox);
-            this.Controls.Add(nomeLabel);
+            this.Controls.Add(this.nomeLabel);
             this.Controls.Add(this.nomeTextBox);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -261,5 +254,12 @@
         private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonCancelar;
+        private System.Windows.Forms.Label nomeLabel;
+        private System.Windows.Forms.Label emailLabel;
+        private System.Windows.Forms.Label nomeUsuarioLabel;
+        private System.Windows.Forms.Label cPFLabel;
+        private System.Windows.Forms.Label senhaLabel;
+        private System.Windows.Forms.Label ativoLabel;
+        private System.Windows.Forms.Label label2;
     }
 }
