@@ -65,6 +65,7 @@
             this.buttonCancelar.TabIndex = 2;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttonEntrar
             // 
@@ -74,6 +75,7 @@
             this.buttonEntrar.TabIndex = 2;
             this.buttonEntrar.Text = "Entrar";
             this.buttonEntrar.UseVisualStyleBackColor = true;
+            this.buttonEntrar.Click += new System.EventHandler(this.buttonEntrar_Click_1);
             // 
             // textBoxUsuario
             // 
@@ -102,7 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::WindowsFormsAppPrincipal.Properties.Resources.fundo_de_ficcao_cientifica_futurista_moderno_35913_2152;
             this.ClientSize = new System.Drawing.Size(618, 370);
             this.Controls.Add(this.textBoxSenha);
@@ -114,7 +116,6 @@
             this.Controls.Add(this.LOGIN);
             this.Name = "FormLogin";
             this.Text = "FormLogin";
-            this.TransparencyKey = System.Drawing.Color.White;
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

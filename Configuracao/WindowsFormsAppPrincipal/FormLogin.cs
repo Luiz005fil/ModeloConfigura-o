@@ -45,5 +45,23 @@ namespace WindowsFormsAppPrincipal
             Application.Exit();
         }
 
+        private void buttonEntrar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                new UsuarioBLL().Altenticar(textBoxUsuario.Text, textBoxSenha.Text);
+                Logou = true;
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

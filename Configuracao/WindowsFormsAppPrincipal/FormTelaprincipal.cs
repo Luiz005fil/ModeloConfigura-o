@@ -20,7 +20,19 @@ namespace WindowsFormsAppPrincipal
 
         private void FormTelaprincipal_Load(object sender, EventArgs e)
         {
-            Constantes.IdUsuarioLogado = 6;
+            try
+            {
+                using(FormLogin frm = new FormLogin())
+                {
+                    frm.ShowDialog();
+                    if (!frm.Logou)
+                        Application.Exit();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,5 +50,6 @@ namespace WindowsFormsAppPrincipal
                 frm.ShowDialog();
             }
         }
+          
     }
 }
