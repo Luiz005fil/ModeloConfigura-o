@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contantes.cs" />
+    <Compile Include="Constantes.cs" />
     <Compile Include="GrupoUsuario.cs" />
     <Compile Include="Permissao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

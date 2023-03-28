@@ -234,10 +234,9 @@ namespace DAL
             }
         }
 
-        public List<Usuario> BuscarPorNomeUsuario(string _nomeUsuario)
+        public Usuario BuscarPorNomeUsuario(string _nomeUsuario)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            List<Usuario> usuarios = new List<Usuario>();
             Usuario usuario = new Usuario();
 
 
@@ -262,12 +261,10 @@ namespace DAL
                         usuario.Ativo = Convert.ToBoolean(rd["Ativo"]);
                         usuario.Senha = rd["Senha"].ToString();
                         usuario.GPusuarios = new GrupoUsuarioDAL().BuscarPorIdUsuario(usuario.Id);
-                        usuarios.Add(usuario);
-
                     }
                 }
 
-                return usuarios;
+                return usuario;
             }
 
             catch (Exception ex)

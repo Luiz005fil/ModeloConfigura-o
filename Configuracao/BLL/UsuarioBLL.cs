@@ -57,8 +57,7 @@ namespace BLL
             ValidarPermissao(1);
             return new UsuarioDAL().BuscarPorNome(_nome);
         }
-        public List<Usuario> BuscarPorNomeUsuario(string _nomeUsuario)
-
+        public Usuario BuscarPorNomeUsuario(string _nomeUsuario)
         {
             ValidarPermissao(1);
             return new UsuarioDAL().BuscarPorNomeUsuario(_nomeUsuario);
@@ -99,6 +98,19 @@ namespace BLL
             new UsuarioDAL().RemoverGrupoUsuario(_idUsuario, _idGrupoUsuario);
         }
 
+        public void Altenticar(string _nomeUsuario, string _senha)
+        {
+            Usuario usuario = new UsuarioDAL().BuscarPorNomeUsuario(_nomeUsuario);
+
+            if (_senha == usuario.Senha && usuario.Ativo)
+            {
+                Constantes.IdUsuarioLogado = usuario.Id;
+            }
+            else
+            {
+                throw new Exception("Usuario ou senha inválida.");
+            }
+        }
 
     }
 }

@@ -20,7 +20,7 @@ namespace WindowsFormsAppPrincipal
 
         private void FormTelaprincipal_Load(object sender, EventArgs e)
         {
-            Contantes.IdUsuarioLogado = 6;
+            Constantes.IdUsuarioLogado = 6;
         }
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)

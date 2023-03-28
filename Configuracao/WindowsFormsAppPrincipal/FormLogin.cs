@@ -8,22 +8,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WindowsFormsAppPrincipal
 {
     public partial class FormLogin : Form
     {
+        public bool Logou;
         public FormLogin()
         {
+
             InitializeComponent();
-            
+            Logou = false;
         }
+
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
             try
             {
-                new UsuarioBLL().autenticar(textBoxUsuario.Text, textBoxSenha.Text);
+                new UsuarioBLL().Altenticar(textBoxUsuario.Text, textBoxSenha.Text);
                 Logou = true;
                 Close();
             }
@@ -37,5 +39,11 @@ namespace WindowsFormsAppPrincipal
         {
 
         }
+
+        private void buttonCencelar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }
