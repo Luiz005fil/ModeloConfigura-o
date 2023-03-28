@@ -40,11 +40,6 @@ namespace WindowsFormsAppPrincipal
 
         }
 
-        private void buttonCencelar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void buttonEntrar_Click_1(object sender, EventArgs e)
         {
             try

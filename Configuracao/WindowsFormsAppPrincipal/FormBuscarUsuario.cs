@@ -117,6 +117,10 @@ namespace WindowsFormsAppPrincipal
             }
         }
 
+        private void FormBuscarUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

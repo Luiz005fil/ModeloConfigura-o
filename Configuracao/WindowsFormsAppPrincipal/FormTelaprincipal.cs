@@ -18,7 +18,7 @@ namespace WindowsFormsAppPrincipal
             InitializeComponent();
         }
 
-        private void FormTelaprincipal_Load(object sender, EventArgs e)
+        /*private void FormTelaprincipal_Load(object sender, EventArgs e)
         {
             try
             {
@@ -34,7 +34,7 @@ namespace WindowsFormsAppPrincipal
                 MessageBox.Show(ex.Message);
             }
         }
-
+        */
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FormBuscarUsuario frm = new FormBuscarUsuario())

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuscarUsuario));
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuarioDataGridView = new System.Windows.Forms.DataGridView();
@@ -154,7 +153,7 @@
             this.gPusuariosDataGridView.Name = "gPusuariosDataGridView";
             this.gPusuariosDataGridView.ReadOnly = true;
             this.gPusuariosDataGridView.RowHeadersWidth = 51;
-            this.gPusuariosDataGridView.Size = new System.Drawing.Size(297, 310);
+            this.gPusuariosDataGridView.Size = new System.Drawing.Size(310, 310);
             this.gPusuariosDataGridView.TabIndex = 2;
             // 
             // idGrupoDataGridViewTextBoxColumn
@@ -190,7 +189,7 @@
             // buttonBuscar
             // 
             this.buttonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscar.Location = new System.Drawing.Point(399, 55);
+            this.buttonBuscar.Location = new System.Drawing.Point(399, 47);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(82, 30);
             this.buttonBuscar.TabIndex = 4;
@@ -201,7 +200,7 @@
             // buttonAlterar
             // 
             this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlterar.Location = new System.Drawing.Point(487, 55);
+            this.buttonAlterar.Location = new System.Drawing.Point(487, 47);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(80, 30);
             this.buttonAlterar.TabIndex = 4;
@@ -212,7 +211,7 @@
             // buttonExcluirusauario
             // 
             this.buttonExcluirusauario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluirusauario.Location = new System.Drawing.Point(573, 55);
+            this.buttonExcluirusauario.Location = new System.Drawing.Point(573, 47);
             this.buttonExcluirusauario.Name = "buttonExcluirusauario";
             this.buttonExcluirusauario.Size = new System.Drawing.Size(81, 30);
             this.buttonExcluirusauario.TabIndex = 4;
@@ -223,7 +222,7 @@
             // buttonAdicionagrupousuario
             // 
             this.buttonAdicionagrupousuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdicionagrupousuario.Location = new System.Drawing.Point(959, 48);
+            this.buttonAdicionagrupousuario.Location = new System.Drawing.Point(982, 46);
             this.buttonAdicionagrupousuario.Name = "buttonAdicionagrupousuario";
             this.buttonAdicionagrupousuario.Size = new System.Drawing.Size(103, 30);
             this.buttonAdicionagrupousuario.TabIndex = 4;
@@ -234,7 +233,7 @@
             // buttonExcluirgrupousuario
             // 
             this.buttonExcluirgrupousuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluirgrupousuario.Location = new System.Drawing.Point(869, 48);
+            this.buttonExcluirgrupousuario.Location = new System.Drawing.Point(882, 47);
             this.buttonExcluirgrupousuario.Name = "buttonExcluirgrupousuario";
             this.buttonExcluirgrupousuario.Size = new System.Drawing.Size(94, 30);
             this.buttonExcluirgrupousuario.TabIndex = 4;
@@ -245,7 +244,7 @@
             // buttonAdicionar
             // 
             this.buttonAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdicionar.Location = new System.Drawing.Point(660, 55);
+            this.buttonAdicionar.Location = new System.Drawing.Point(660, 47);
             this.buttonAdicionar.Name = "buttonAdicionar";
             this.buttonAdicionar.Size = new System.Drawing.Size(111, 30);
             this.buttonAdicionar.TabIndex = 4;
@@ -257,7 +256,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 379);
+            this.ClientSize = new System.Drawing.Size(1110, 420);
             this.Controls.Add(this.buttonAdicionar);
             this.Controls.Add(this.buttonExcluirgrupousuario);
             this.Controls.Add(this.buttonAdicionagrupousuario);
@@ -268,10 +267,10 @@
             this.Controls.Add(this.gPusuariosDataGridView);
             this.Controls.Add(this.usuarioDataGridView);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormBuscarUsuario";
             this.Text = "Buscar Usuário";
+            this.Load += new System.EventHandler(this.FormBuscarUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).EndInit();

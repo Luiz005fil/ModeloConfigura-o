@@ -94,7 +94,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormTelaprincipal";
             this.Text = "Tela Principal";
-            this.Load += new System.EventHandler(this.FormTelaprincipal_Load);
+   
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
