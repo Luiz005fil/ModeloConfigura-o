@@ -11,7 +11,7 @@ INSERT INTO Permissao(Id, Descricao)VALUES(8,'Excluir grupo de usuário')
 INSERT INTO Permissao(Id, Descricao)VALUES(9,'Adicionar permissão a um grupo de usuário')
 INSERT INTO Permissao(Id, Descricao)VALUES(10,'Adicionar grupo de usuário a um usuário')
 
---UPDATE GrupoUsuario set NomeGrupo = 'Vendedor' WHERE Id = 2
+--UPDATE GrupoUsuario set NomeGrupo = 'Vendedor' WHERE Id = 1
 
 
  SELECT * FROM GrupoUsuario;
@@ -40,7 +40,13 @@ INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario , IdPermissao)VALUES(1,8)
 INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario , IdPermissao)VALUES(1,9)
 INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario , IdPermissao)VALUES(1,10)
 
-INSERT INTO UsuarioGrupoUsuario(IdUsuario,IdGrupoUsuario) VALUES(1,1)
+INSERT INTO UsuarioGrupoUsuario
+
+INSERT INTO UsuarioGrupoUsuario(IdUsuario,IdGrupoUsuario) VALUES(6,5)
+INSERT INTO UsuarioGrupoUsuario(IdUsuario,IdGrupoUsuario) VALUES(10,7)
+INSERT INTO UsuarioGrupoUsuario(IdUsuario,IdGrupoUsuario) VALUES(1,8)
+INSERT INTO UsuarioGrupoUsuario(IdUsuario,IdGrupoUsuario) VALUES(4,6)
+
 
  
  
@@ -51,7 +57,7 @@ SELECT * FROM UsuarioGrupoUsuario
 
   DECLARE @IdUsuario INT = 1
   DECLARE @IdPermissao INT = 10
-  DECLARE
+
 
 
  SELECT 1 FROM PermissaoGrupoUsuario
